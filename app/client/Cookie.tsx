@@ -6,7 +6,8 @@ export const ClientCookie: FC<{
 }> = ({apiBase}) => {
     const [cookies, setCookies] = useState('')
     useEffect(() => {
-        document.cookie = `cookie-test=${Math.random()};api-path=${apiBase}`
+        document.cookie = `cookie-test=${Math.random()}`
+        document.cookie = `api-path=${apiBase}`
         fetch(`/api/test`, {
             method: 'POST',
             cache: 'no-cache',
